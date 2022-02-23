@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tegaki</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/css/tegaki.css">
+  <script src="./js/strings/en.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/tool.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/brush.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/pencil.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/pen.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/airbrush.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/blur.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/bucket.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/eraser.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/pipette.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/tools/tone.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/$T.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/cursor.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/history.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/layers.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/keybinds.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/palettes.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/pressure.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/replayevents.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/desuwa/tegaki@master/js/main.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  function onTegakiDone() {
+    var w = window.open('');
+    
+    Tegaki.flatten().toBlob(
+      function(b) { w.location = URL.createObjectURL(b); },
+      'image/png'
+    );
+  }
+  
+  Tegaki.open({
+    onDone: onTegakiDone,
+    width: 500,
+    height: 500
+  });
+</script>
+</body>
+</html>
